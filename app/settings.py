@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'usuarios.CustomUser'
 
 INSTALLED_APPS = [
+	'acessos',
 	'usuarios',
 	'rest_framework',
     'django.contrib.admin',
@@ -49,6 +50,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+
+    'acessos.middleware.RateLimitMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
