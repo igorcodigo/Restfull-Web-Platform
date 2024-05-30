@@ -39,6 +39,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 AUTH_USER_MODEL = 'usuarios.CustomUser'
 
 INSTALLED_APPS = [
+	'books',
     'rest_framework_simplejwt',
 	'acessos',
 	'usuarios',
