@@ -20,10 +20,16 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path, include
 
+from django.shortcuts import render
+
+def privacy_policy(request):
+    return render(request, 'privacy.html')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('usuarios.urls')),
     path('api/', include('books.urls')),
+    path('politica-de-privacidade/', privacy_policy ),
 ]
 
 
