@@ -2,7 +2,7 @@ name: Lint (Python) 🧹
 
 on:
   push:
-    branches: [main,feature/ci-github-actions]
+    branches: [main]
   pull_request:
     branches: [main]
 
