@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint:
-    name: Lint with flake8 ☃️, blue 🔵, and isort 📚
+    name: Lint with pylint 🧪, blue 🔵, and isort 📚
     runs-on: ubuntu-latest
 
     steps:
@@ -25,9 +25,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run flake8 🧪
+      - name: Run pylint 🧪
         run: |
-          flake8 .
+          pylint .
 
       - name: Run blue 🔵
         run: |
