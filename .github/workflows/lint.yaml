@@ -31,7 +31,7 @@ jobs:
       - name: Run pylint 🧪
         continue-on-error: true
         run: |
-          pylint .
+          pylint --recursive *.py
 
       - name: Run blue 🔵
         continue-on-error: true
