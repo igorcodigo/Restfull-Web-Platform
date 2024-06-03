@@ -1,0 +1,4 @@
+[MASTER]
+
+# Specify additional paths (outside of PYTHONPATH) to look for python files
+init-hook='import sys; sys.path.append("books"); sys.path.append("usuarios")'
