@@ -31,7 +31,7 @@ jobs:
       - name: Run pylint 🧪
         continue-on-error: true
         run: |
-          pylint --recursive *.py
+          find . -type f -name "*.py" | xargs pylint
 
       - name: Run blue 🔵
         continue-on-error: true
