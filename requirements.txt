@@ -9,6 +9,6 @@ sqlparse==0.5.0
 tzdata==2024.1
 
 # CI/CD
-pylint==2.11.1
-isort==5.10.1
+pylint==3.2.2
+isort==5.13.2
 blue==0.9.1

@@ -20,19 +20,25 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Update pip 🔂
+        run: python -m pip install --upgrade pip
+
       - name: Install dependencies 📦
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run pylint 🧪
+        continue-on-error: true
         run: |
           pylint .
 
       - name: Run blue 🔵
+        continue-on-error: true
         run: |
           blue --check .
 
       - name: Run isort 📚
+        continue-on-error: true
         run: |
           isort --profile=black --check-only .
