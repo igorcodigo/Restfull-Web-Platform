@@ -1,11 +1,10 @@
-version: '3'
-
 services:
 
   restful-web-platform:
-    image: restful-web-platform:0.1.0
-    command: python manage.py runserver 0.0.0.0:8000
+    image: restful-web-platform:$APP_VERSION
+    command: "python manage.py runserver 0.0.0.0:8000"
     ports:
       - "8000:8000"
-    environment:
-      - DATABASE_URL=sqlite:///db.sqlite3
+    env_file:
+      - path: ../docker-compose.env
+        required: true # default
