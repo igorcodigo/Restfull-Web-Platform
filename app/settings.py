@@ -39,6 +39,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 AUTH_USER_MODEL = 'usuarios.CustomUser'
 
 INSTALLED_APPS = [
+    'corsheaders',
 	'books',
     'rest_framework_simplejwt',
 	'acessos',
@@ -60,6 +61,7 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
 
+    'corsheaders.middleware.CorsMiddleware',
     'app.middleware.SimpleCORSHeadersMiddleware',
     'acessos.middleware.RateLimitMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -169,3 +171,21 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+    'https://projeto-n695-frontend.vercel.app',
+)
+
+# Optionally, allow specific headers and methods
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+]
+
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE',
+    'OPTIONS',
+]

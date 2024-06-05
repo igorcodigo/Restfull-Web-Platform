@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Livraria</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @layer utilities {
+            .book-shadow {
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            }
+        }
+        .bg-book-cover {
+            background: linear-gradient(135deg, #FF6600, #FF9900); /* Orange gradient top bar */
+        }
+        .transition-colors {
+            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+        }
+        .transition-shadow {
+            transition: box-shadow 0.3s;
+        }
+        .hover-underline:hover {
+            text-decoration: underline;
+        }
+        .aurora-bg {
+            background: linear-gradient(270deg, #FF6600, #FF9900, #FF6600, #FF9900);
+            background-size: 600% 600%;
+            animation: auroraAnimation 10s ease infinite;
+        }
+        @keyframes auroraAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .transition-transform {
+            transition: transform 0.3s;
+        }
+        /* Slider */
+        .slider {
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+        .slider input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider .track {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider .thumb {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background-color: white;
+            border-radius: 50%;
+            transition: .4s;
+            top: 4px;
+            left: 4px;
+        }
+        input:checked + .track {
+            background-color: #FF6600;
+        }
+        input:checked + .track .thumb {
+            transform: translateX(26px);
+        }
+    </style>
+    <script>
+        function toggleForm() {
+            var checkbox = document.getElementById('toggleSwitch');
+            var title = document.getElementById('formTitle');
+            var submitButton = document.getElementById('submitButton');
+            var forgotPassword = document.getElementById('forgotPassword');
+
+            if (checkbox.checked) {
+                title.textContent = "Registro";
+                submitButton.textContent = "Criar Conta";
+                forgotPassword.style.display = "none";
+            } else {
+                title.textContent = "Login";
+                submitButton.textContent = "Acessar Área de Membros";
+                forgotPassword.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen"> <!-- Lighter gray background -->
+    <div class="bg-gray-50 p-8 rounded-lg shadow-lg max-w-md w-full book-shadow transition-shadow hover:shadow-xl"> <!-- Softer white panels -->
+        <div class="bg-book-cover p-4 rounded-t-lg flex justify-between items-center">
+            <h2 id="formTitle" class="text-3xl font-bold mb-4 text-center text-white">Login</h2>
+            <label class="slider">
+                <input type="checkbox" id="toggleSwitch" onclick="toggleForm()">
+                <span class="track"><span class="thumb"></span></span>
+            </label>
+        </div>
+        <form class="bg-gray-50 p-6 rounded-b-lg shadow-md book-shadow"> <!-- Softer white panels -->
+            <div class="mb-4">
+                <label for="email" class="block text-gray-600 text-sm font-bold mb-2">Email:</label> <!-- Darker text color for better readability -->
+                <input type="email" id="email" name="email" class="shadow appearance-none border border-gray-200 rounded w-full py-2 px-3 text-gray-600 leading-tight focus:outline-none focus:shadow-outline book-shadow transition-shadow hover:shadow-md" placeholder="Digite seu email">
+            </div>
+            <div class="mb-6">
+                <label for="password" class="block text-gray-600 text-sm font-bold mb-2">Senha:</label>
+                <input type="password" id="password" name="password" class="shadow appearance-none border border-gray-200 rounded w-full py-2 px-3 text-gray-600 mb-0 leading-tight focus:outline-none focus:shadow-outline book-shadow transition-shadow hover:shadow-md" placeholder="Digite sua senha">
+            </div>
+            <div class="mb-4">
+                <button id="submitButton" type="submit" class="aurora-bg text-white font-bold py-2 px-4 w-full rounded focus:outline-none focus:shadow-outline transition-transform hover-scale text-base">Acessar Área de Membros</button>
+            </div>
+            <div id="forgotPassword" class="flex items-center justify-between">
+                <a href="#" class="inline-block align-baseline font-bold text-sm text-primary-orange hover:text-secondary-orange transition-colors hover-underline">Esqueceu a senha?</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
