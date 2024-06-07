@@ -1,4 +1,4 @@
-# Sistema de Gerenciamento de Usuários e Livros com Limitação de Taxa de Requisições e JWT
+# Sistema de Gerenciamento de Usuários e Livros com Limitação de Taxa de Requisições e Autenticação com JWT
 ## Descrição
 Este sistema implementa uma aplicação Django com funcionalidades  gerenciamento de usuários e livros com limitação de taxa de requisições baseadas no IP para proteger o sistema. A limitação de taxa é configurada para permitir até 120 requisições por 15 minutos por IP. O sistema inclui autenticação JWT para segurança e usa Django REST Framework para a API.
 
@@ -9,7 +9,7 @@ Este sistema implementa uma aplicação Django com funcionalidades  gerenciament
 - Sistema de autenticação e gerenciamento de sessão.
 - Middleware para tratamento de CORS.
 
-## Tecnologias Utilizadas
+## Tecnologias Utilizadas no Backend
 - HTML5
 - CSS3
 - JavaScript
