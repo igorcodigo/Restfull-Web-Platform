@@ -21,7 +21,7 @@ class RateLimit(models.Model):
         self.save()
 
     def is_rate_limited(self):
-        return self.request_count > 200  # Limite de requisições: 100 por 15 minutos
+        return self.request_count > 1200  # Limite de requisições: 100 por 15 minutos
 
     def update_request_count(self):
         now = timezone.now()
