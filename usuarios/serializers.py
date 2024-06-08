@@ -8,6 +8,12 @@ class CustomUserSerializer(serializers.ModelSerializer):
         model = CustomUser
         fields = ['id', 'username', 'first_name', 'last_name', 'email', 'password']
 
+    def validate_username(self, value):
+        return value.lower()
+
+    def validate_email(self, value):
+        return value.lower()
+
     def create(self, validated_data):
         password = validated_data.pop('password', None)
         user = CustomUser(**validated_data)
@@ -19,7 +25,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         password = validated_data.pop('password', None)
         for attr, value in validated_data.items():
-            setattr(instance, attr, value)
+            setattr(instance, attr, value.lower() if attr in ['username', 'email'] else value)
         if password is not None:
             instance.set_password(password)
         instance.save()
