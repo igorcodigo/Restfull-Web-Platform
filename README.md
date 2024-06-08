@@ -61,8 +61,8 @@ Este sistema implementa uma aplicação Django com funcionalidades  gerenciament
 ### URLs
 - `/api/users/`: Endpoint para CRUD de usuários.
 - `/api/books/`: Endpoint para CRUD de livros.
-- `/auth/login/`: Endpoint para obtenção do token JWT.
-- `/auth/login/refreshtoken/`: Endpoint para renovação do token JWT.
+- `/api/auth/login/`: Endpoint para obtenção do token JWT.
+- `/api/auth/login/refreshtoken/`: Endpoint para renovação do token JWT.
 
 ### Models
 - `CustomUser`: Modelo customizado de usuário.
