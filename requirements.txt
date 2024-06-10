@@ -1,3 +1,4 @@
+# Application
 asgiref==3.8.1
 Django==5.0.6
 django-cors-headers==4.3.1
@@ -8,3 +9,8 @@ PyJWT==2.8.0
 python-dotenv==1.0.1
 sqlparse==0.5.0
 tzdata==2024.1
+
+# CI/CD
+blue==0.9.1
+isort==5.13.2
+pylint==3.2.2
