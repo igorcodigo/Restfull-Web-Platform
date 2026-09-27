@@ -1,4 +1,9 @@
 # Sistema de Gerenciamento de Usuários e Livros com Limitação de Taxa de Requisições e Autenticação com JWT
+
+<!-- repos-pai:inicio -->
+> **Repositório pai:** [`Projetos_Em_Inatividade__Arquivos_Inativos_Por_Ano__2024`](https://github.com/igorcodigo/Projetos_Em_Inatividade__Arquivos_Inativos_Por_Ano__2024) — pasta `Projetos_Em_Inatividade/Arquivos_Inativos_Por_Ano/2024`
+<!-- repos-pai:fim -->
+
 ## Descrição
 Este sistema implementa uma aplicação Django com funcionalidades  gerenciamento de usuários e livros com limitação de taxa de requisições baseadas no IP para proteger o sistema. A limitação de taxa é configurada para permitir até 120 requisições por 15 minutos por IP. O sistema inclui autenticação JWT para segurança e usa Django REST Framework para a API.
 
